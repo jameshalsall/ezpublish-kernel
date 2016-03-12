@@ -1,4 +1,20 @@
+# Use trusty for better performance (and avoiding mysql/postgres/solr gone issues on precise and container infra)
+dist: trusty
+sudo: required
+
 language: php
+
+services:
+  - mysql
+  - postgresql
+
+addons:
+  postgresql: "9.4"
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
 
 # execute unit tests, integration test stubs and integration tests using legacy storage engine
 env:
