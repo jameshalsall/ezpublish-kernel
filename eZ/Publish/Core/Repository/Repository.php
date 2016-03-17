@@ -210,6 +210,13 @@ class Repository implements RepositoryInterface
     protected $domainMapper;
 
     /**
+     * Instance of content type domain mapper.
+     *
+     * @var \eZ\Publish\Core\Repository\Helper\ContentTypeDomainMapper
+     */
+    protected $contentTypeDomainMapper;
+
+    /**
      * Instance of permissions criterion handler.
      *
      * @var \eZ\Publish\Core\Repository\PermissionsCriterionHandler
@@ -618,6 +625,7 @@ class Repository implements RepositoryInterface
             $this,
             $this->persistenceHandler->contentTypeHandler(),
             $this->getDomainMapper(),
+            $this->getContentTypeDomainMapper(),
             $this->getFieldTypeRegistry(),
             $this->serviceSettings['contentType']
         );
@@ -917,6 +925,7 @@ class Repository implements RepositoryInterface
 
         $this->nameSchemaService = new Helper\NameSchemaService(
             $this->persistenceHandler->contentTypeHandler(),
+            $this->getContentTypeDomainMapper(),
             $this->getNameableFieldTypeRegistry(),
             $this->serviceSettings['nameSchema']
         );
@@ -944,8 +953,7 @@ class Repository implements RepositoryInterface
     }
 
     /**
-     * Get RelationProcessor.
-     *
+     * Get Content Domain Mapper.
      *
      * @todo Move out from this & other repo instances when services becomes proper services in DIC terms using factory.
      *
@@ -966,6 +974,27 @@ class Repository implements RepositoryInterface
         );
 
         return $this->domainMapper;
+    }
+
+    /**
+     * Get ContentType Domain Mapper.
+     *
+     * @todo Move out from this & other repo instances when services becomes proper services in DIC terms using factory.
+     *
+     * @return \eZ\Publish\Core\Repository\Helper\ContentTypeDomainMapper
+     */
+    protected function getContentTypeDomainMapper()
+    {
+        if ($this->contentTypeDomainMapper !== null) {
+            return $this->contentTypeDomainMapper;
+        }
+
+        $this->contentTypeDomainMapper = new Helper\ContentTypeDomainMapper(
+            $this->persistenceHandler->contentLanguageHandler(),
+            $this->getFieldTypeRegistry()
+        );
+
+        return $this->contentTypeDomainMapper;
     }
 
     /**
