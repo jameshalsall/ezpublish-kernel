@@ -6,7 +6,6 @@ namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\Limitation;
 
 use eZ\Publish\Core\REST\Server\Input\Parser\Limitation\RouteBasedLimitationParser;
 use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
-use PHPUnit_Framework_TestCase;
 
 class RouteBasedLimitationParserTest extends BaseTest
 {
@@ -17,17 +16,16 @@ class RouteBasedLimitationParserTest extends BaseTest
             'values' => [
                 'ref' => [
                     ['_href' => '/content/sections/42'],
-                ]
-            ]
+                ],
+            ],
         ];
-        
+
         $result = $this->getParser()->parse($inputArray, $this->getParsingDispatcherMock());
 
         self::assertInstanceOf('stdClass', $result);
         self::assertObjectHasAttribute('limitationValues', $result);
         self::assertArrayHasKey(0, $result->limitationValues);
         self::assertEquals(42, $result->limitationValues[0]);
-
     }
 
     /**
@@ -45,5 +43,4 @@ class RouteBasedLimitationParserTest extends BaseTest
             array('/content/sections/42', 'sectionId', 42),
         );
     }
-
 }
