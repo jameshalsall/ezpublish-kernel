@@ -603,7 +603,7 @@ XML;
             $this->createHttpRequest('PUBLISH', $roleDraftHref)
         );
 
-        self::assertHttpResponseCodeEquals($response, 201);
+        self::assertHttpResponseCodeEquals($response, 204);
     }
 
     /**

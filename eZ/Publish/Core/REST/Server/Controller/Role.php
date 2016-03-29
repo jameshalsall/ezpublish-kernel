@@ -269,7 +269,8 @@ class Role extends RestController
      * Publishes a role draft.
      *
      * @param mixed $roleId Original role ID, or ID of the role draft itself
-     * @return Values\RestRole
+     *
+     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
      */
     public function publishRoleDraft($roleId)
     {
@@ -283,9 +284,8 @@ class Role extends RestController
         }
 
         $this->roleService->publishRoleDraft($roleDraft);
-        $publishedRole = $this->roleService->loadRole($roleDraft->id);
 
-        return new Values\CreatedRole(['role' => new Values\RestRole($publishedRole)]);
+        return new Values\NoContent();
     }
 
     /**

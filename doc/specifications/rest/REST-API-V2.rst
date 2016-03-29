@@ -5583,9 +5583,7 @@ Publish Role draft
 
 .. code:: http
 
-          HTTP/1.1 200 OK
-          Content-Type: <depending on accept header>
-          Content-Length: <length>
+          HTTP/1.1 204 No Content
 .. parsed-literal::
           Role_
 
