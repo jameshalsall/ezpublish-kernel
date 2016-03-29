@@ -30,8 +30,8 @@ class ScriptHandler extends DistributionBundleScriptHandler
 
         if (!$env) {
             $env = $event->getIO()->ask(
-                "<question>'SYMFONY_ENV' environment variable not defined, which environment would you like to dump production assets for?</question> (Default: 'prod', type 'none' to skip) ",
-                'prod'
+                "<question>'SYMFONY_ENV' environment variable not defined, which environment would you like to dump production assets for?</question> (Default: 'dev', type 'none' to skip) ",
+                'dev'
             );
         }
 
@@ -64,7 +64,7 @@ class ScriptHandler extends DistributionBundleScriptHandler
      */
     public static function dumpAssetsHelpText(CommandEvent $event)
     {
-        $env = getenv('SYMFONY_ENV') ?: 'prod';
+        $env = getenv('SYMFONY_ENV') ?: 'dev';
         $event->getIO()->write('<info>To dump eZ Publish production assets, execute the following:</info>');
         $event->getIO()->write('    php app/console assetic:dump --env=' . $env . ' web');
         $event->getIO()->write('');
