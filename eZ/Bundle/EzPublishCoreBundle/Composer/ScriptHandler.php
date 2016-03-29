@@ -25,11 +25,12 @@ class ScriptHandler extends DistributionBundleScriptHandler
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
         $webDir = $options['symfony-web-dir'];
-        $env = isset($options['ezpublish-asset-dump-env']) ? $options['ezpublish-asset-dump-env'] : '';
+        // @deprecated: Use of ezpublish-asset-dump-env is deprecated, use standard SYMFONY_ENV instead.
+        $env = !empty($options['ezpublish-asset-dump-env']) ? $options['ezpublish-asset-dump-env'] : (getenv('SYMFONY_ENV') ?: '');
 
         if (!$env) {
             $env = $event->getIO()->ask(
-                "<question>Which environment would you like to dump production assets for?</question> (Default: 'prod', type 'none' to skip) ",
+                "<question>'SYMFONY_ENV' environment variable not defined, which environment would you like to dump production assets for?</question> (Default: 'prod', type 'none' to skip) ",
                 'prod'
             );
         }
@@ -63,8 +64,9 @@ class ScriptHandler extends DistributionBundleScriptHandler
      */
     public static function dumpAssetsHelpText(CommandEvent $event)
     {
+        $env = getenv('SYMFONY_ENV') ?: 'prod';
         $event->getIO()->write('<info>To dump eZ Publish production assets, execute the following:</info>');
-        $event->getIO()->write('    php app/console assetic:dump --env=prod web');
+        $event->getIO()->write('    php app/console assetic:dump --env=' . $env . ' web');
         $event->getIO()->write('');
     }
 
