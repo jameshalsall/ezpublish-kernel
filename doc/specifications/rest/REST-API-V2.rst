@@ -5584,8 +5584,6 @@ Publish Role draft
 .. code:: http
 
           HTTP/1.1 204 No Content
-.. parsed-literal::
-          Role_
 
 :Error Codes:
     :401: If the user is not authorized to publish this content type draft
