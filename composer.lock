@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a7d907a84ebcdb703720381c452bc733",
-    "content-hash": "01309c5727a4f78166c8405691097381",
+    "hash": "c9a9a4e2f6b1262e3c0c0cb22c00a8cc",
+    "content-hash": "a23a09694ca4a93e57dc5494fb7a06b7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -888,7 +888,6 @@
                 "rest",
                 "web service"
             ],
-            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
@@ -1644,63 +1643,17 @@
             "time": "2016-04-03 06:00:07"
         },
         {
-            "name": "psr/cache",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/cache.git",
-                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Cache\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for caching libraries",
-            "keywords": [
-                "cache",
-                "psr",
-                "psr-6"
-            ],
-            "time": "2016-08-06 20:24:11"
-        },
-        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "1.0.0"
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/1.0.0",
-                "reference": "1.0.0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "shasum": ""
             },
             "type": "library",
@@ -1733,12 +1686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Qafoo/REST-Micro-Framework.git",
-                "reference": "1.0.0"
+                "reference": "d382e9e20ff189c4351f12c70df083dac039e818"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Qafoo/REST-Micro-Framework/zipball/1.0.0",
-                "reference": "1.0.0",
+                "url": "https://api.github.com/repos/Qafoo/REST-Micro-Framework/zipball/d382e9e20ff189c4351f12c70df083dac039e818",
+                "reference": "d382e9e20ff189c4351f12c70df083dac039e818",
                 "shasum": ""
             },
             "type": "library",
@@ -1749,7 +1702,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Very simple VC framework which makes it easy to build HTTP applications / REST webservices",
-            "time": "2012-09-03 11:24:11"
+            "time": "2012-09-03 18:24:11"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2624,28 +2577,24 @@
         },
         {
             "name": "tedivm/stash",
-            "version": "v0.14.1",
+            "version": "v0.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tedious/Stash.git",
-                "reference": "bcb739b08b22571e35589ebe5403af9b89a33394"
+                "reference": "3489b13bad93c81a898fcb1054ae954575e1a7b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedious/Stash/zipball/bcb739b08b22571e35589ebe5403af9b89a33394",
-                "reference": "bcb739b08b22571e35589ebe5403af9b89a33394",
+                "url": "https://api.github.com/repos/tedious/Stash/zipball/3489b13bad93c81a898fcb1054ae954575e1a7b6",
+                "reference": "3489b13bad93c81a898fcb1054ae954575e1a7b6",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4|^7.0",
-                "psr/cache": "~1.0"
-            },
-            "provide": {
-                "psr/cache-implementation": "1.0.0"
+                "php": "^5.4|^7.0"
             },
             "require-dev": {
                 "fabpot/php-cs-fixer": "^1.9",
-                "phpunit/phpunit": "4.8.*",
+                "phpunit/phpunit": "4.7.*",
                 "satooshi/php-coveralls": "1.0.*"
             },
             "type": "library",
@@ -2675,25 +2624,23 @@
                 "cache",
                 "caching",
                 "memcached",
-                "psr-6",
-                "psr6",
                 "redis",
                 "sessions"
             ],
-            "time": "2016-02-10 22:23:16"
+            "time": "2015-12-29 00:07:05"
         },
         {
             "name": "tedivm/stash-bundle",
-            "version": "v0.6.1",
+            "version": "v0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tedious/TedivmStashBundle.git",
-                "reference": "99e435e8f61ac165183c0d279e15bfd225eb67c4"
+                "reference": "c9ac2259ec8064914e5e20ec690f7c11d1898757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedious/TedivmStashBundle/zipball/99e435e8f61ac165183c0d279e15bfd225eb67c4",
-                "reference": "99e435e8f61ac165183c0d279e15bfd225eb67c4",
+                "url": "https://api.github.com/repos/tedious/TedivmStashBundle/zipball/c9ac2259ec8064914e5e20ec690f7c11d1898757",
+                "reference": "c9ac2259ec8064914e5e20ec690f7c11d1898757",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2648,7 @@
                 "symfony/config": "~2.1|~3.0",
                 "symfony/dependency-injection": "~2.1|~3.0",
                 "symfony/http-kernel": "~2.1|~3.0",
-                "tedivm/stash": "0.14.*"
+                "tedivm/stash": "0.13.*"
             },
             "require-dev": {
                 "doctrine/cache": "~1.0",
@@ -2741,7 +2688,7 @@
                 "stash",
                 "symfony"
             ],
-            "time": "2016-02-11 01:11:59"
+            "time": "2015-12-29 02:22:57"
         },
         {
             "name": "twig/twig",
@@ -3373,12 +3320,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikey179/vfsStream.git",
-                "reference": "v1.1.0"
+                "reference": "fc0fe8f4d0b527254a2dc45f0c265567c881d07e"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/fc0fe8f4d0b527254a2dc45f0c265567c881d07e",
-                "reference": "v1.1.0",
+                "reference": "fc0fe8f4d0b527254a2dc45f0c265567c881d07e",
                 "shasum": ""
             },
             "require": {
@@ -3395,7 +3342,7 @@
                 "BSD"
             ],
             "homepage": "http://vfs.bovigo.org/",
-            "time": "2012-08-25 05:49:29"
+            "time": "2012-08-25 12:49:29"
         },
         {
             "name": "mockery/mockery",
