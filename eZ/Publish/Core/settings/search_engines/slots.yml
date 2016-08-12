@@ -45,11 +45,11 @@ services:
         tags:
             - {name: ezpublish.search.slot, signal: ContentService\DeleteContentSignal}
 
-    ezpublish.search.slot.delete_version:
-        parent: ezpublish.search.slot
-        class: %ezpublish.search.slot.delete_version.class%
-        tags:
-            - {name: ezpublish.search.slot, signal: ContentService\DeleteVersionSignal}
+#    ezpublish.search.slot.delete_version:
+#        parent: ezpublish.search.slot
+#        class: %ezpublish.search.slot.delete_version.class%
+#       tags:
+#            - {name: ezpublish.search.slot, signal: ContentService\DeleteVersionSignal}
 
     ezpublish.search.slot.create_location:
         parent: ezpublish.search.slot
